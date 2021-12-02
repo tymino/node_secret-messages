@@ -1,0 +1,24 @@
+{
+  "name": "node_secret-messages",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "qwe",
+  "author": "tymino",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "yarn nodemon ./src/index.js"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.14"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/register": "^7.16.0",
+    "nodemon": "^2.0.15"
+  }
+}
