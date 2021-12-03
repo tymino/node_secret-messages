@@ -1,46 +1,31 @@
+import path from 'path';
 import dotenv from 'dotenv';
 import express from 'express';
+import bodyParser from 'body-parser';
+
+import router from './routes/routes';
 
 import connectDB from './db';
-import Messages from './db/Scheme';
 
 const app = express();
-dotenv.config();
 
+dotenv.config();
 connectDB(app);
 
-app.get('/', (req, res) => {
-  Messages.findOne({ name: 'Alex' }, (err, message) => {
-    if (err) throw err;
+app.use(bodyParser.json());
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: true,
+//   }),
+// );
 
-    // console.log(message);
-    res.send(message);
-  });
-});
-app.get('/:id', async (req, res) => {
-  const id = req.params.id;
-  const name = '17';
+app.use(bodyParser.json());
+app.use('/css', express.static(path.join(__dirname, 'public/css')));
+app.use('/js', express.static(path.join(__dirname, 'public/js')));
 
-  const msg = new Messages({ name });
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-  try {
-    const message = await Messages.findOne({ name });
+app.use('/', router);
 
-    console.log(message);
-
-    if (message) {
-      res.send('Nope');
-      return;
-    }
-
-    await msg.save();
-    res.send('Added');
-
-  } catch (error) {
-    console.log(error, 'catch');
-  }
-});
-
-app.use((req, res, next) => {
-  res.status(404).send("Sorry can't find that!");
-});
+app.use((req, res, next) => res.status(404).send("Sorry can't find that!"));
