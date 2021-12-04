@@ -4,16 +4,19 @@ import Messages from '../db/Scheme';
 
 const router = express.Router();
 
+router.get('/link', (req, res) => {
+  res.render('pages/link', { header: 'NEW Header' });
+});
+
 router.get('/', async (req, res) => {
   await Messages.findOne({ name: 'Alex' });
 
-  // res.sendFile(path.join(__dirname, '../', '/pages/home.html'));
   res.render('pages/home', { header: 'NEW Header' });
 });
 
 router.post('/', async(req, res) => {
 
-  console.log(req.body.name);
+  console.log(req.body.name, '/');
 
   // res.status(200).json(req.body.name);
   res.redirect('link');
@@ -51,9 +54,7 @@ router.post('/', async(req, res) => {
 //   }
 // });
 
-router.get('/link', (req, res) => {
-  res.render('pages/link', { header: 'NEW Header' });
-});
+
 
 
 

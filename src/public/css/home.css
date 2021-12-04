@@ -1,14 +1,101 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* :root {
+  --orange: #ffaa6c;
+  --yellow: #ffe8bb;
+  --white: #ffffff;
+  --pink: #ffbecb;
+} */
+
+/* Header */
+.message-header {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: var(--orange);
 }
 
-html {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 16px;
+/* Form block */
+.message-form {
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  color: red;
+/* Text block */
+.message-form__text {
+  display: flex;
+  flex-direction: column;
+}
+.message-form__text > textarea {
+  width: 80vw;
+  max-width: 400px;
+  height: 40vh;
+  max-height: 400px;
+  padding: 0 4px 0 10px;
+
+  font-size: 1.8rem;
+  color: var(--pink);
+  background-color: var(--yellow);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+  outline: none;
+  resize: none;
+}
+.message-form__text > textarea:focus {
+  filter: contrast(110%);
+}
+
+.message-form__text > p {
+  align-self: flex-end;
+  color: var(--pink);
+}
+
+/* Password block */
+.message-form__password {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.message-form__password > input {
+  align-self: center;
+  width: 200px;
+  height: 30px;
+
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--pink);
+  background-color: var(--yellow);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+  outline: none;
+}
+.message-form__password > input:focus {
+  filter: contrast(110%);
+}
+
+.message-form__password > p {
+  align-self: center;
+  color: var(--pink);
+  font-size: 0.8rem;
+  text-transform: lowercase;
+}
+
+/* Button */
+.message-form__submit {
+  align-self: center;
+  width: 60vw;
+  max-width: 120px;
+  height: 40px;
+  margin-top: 10px;
+
+  color: var(--yellow);
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+  outline: none;
+}
+
+.message-form__submit:hover {
+  filter: contrast(140%);
 }

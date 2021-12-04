@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Secret messages | Node.js Express</title>
+    <%- include('../include/head'); %>
 
     <link rel="stylesheet" href="css/home.css" />
     <script defer src="js/home.js"></script>
   </head>
   <body>
-    <h1>Home</h1>
-    <form id='form' method="post">
-      <textarea id='textarea' name="area" cols="30" rows="10"></textarea>
-      <button type="submit">Send</button>
+    <h1 class="message-header">Secret Message</h1>
+    <form class="message-form" method="post">
+      <div class="message-form__text">
+        <textarea id="textarea" name="area"></textarea>
+        <p>0/200</p>
+      </div>
+
+      <div class="message-form__password">
+        <input type="text">
+        <p>4-8 length</p>
+      </div>
+
+      <button class="message-form__submit" type="submit">Send</button>
     </form>
   </body>
 </html>
