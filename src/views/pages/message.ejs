@@ -6,12 +6,25 @@
     <link rel="stylesheet" href="css/message.css" />
   </head>
   <body>
-    <div class="message-page">
+    <form class="password-page js-password-page" method="post">
+      <h1 class="password-page__header">password</h1>
+      <input class="password-page__input js-password-page__input" type="text" />
+      <button
+        class="password-page__submit js-password-page__submit"
+        type="submit"
+      >
+        send
+      </button>
+    </form>
+
+    <div class="message-page js-message-page">
       <h1 class="message-page__header">message</h1>
       <div class="message-page__wrapper">
-        <p class="message-page__text"><%= messageText %></p>
+        <p class="message-page__text js-message-page__text"></p>
       </div>
-      <a class="message-page__link-home" href="/" rel="noopener noreferrer">go home</a>
+      <a class="message-page__link-home" href="/" rel="noopener noreferrer"
+        >go home</a
+      >
     </div>
   </body>
 </html>

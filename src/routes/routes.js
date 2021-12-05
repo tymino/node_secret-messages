@@ -19,16 +19,16 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  res.redirect('/link?url=' + req.body.name);
+  res.send(req.body);
 });
 
-// router.get('/:id', async (req, res) => {
-//   const id = req.params.id;
+router.get('/:id', async (req, res) => {
+  const id = req.params.id;
 
-//   if (id.length > 6) {
-//     res.sendFile(path.join(__dirname, '../', '/pages/404.html'));
-//     return;
-//   }
+  if (id.length > 6) {
+    res.render('pages/404');
+    return;
+  }
 
 //   const name = '17';
 
@@ -52,6 +52,6 @@ router.post('/', async (req, res) => {
 //   } catch (error) {
 //     console.log(error, 'catch');
 //   }
-// });
+});
 
 export default router;
