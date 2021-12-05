@@ -1,0 +1,53 @@
+.message-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-page__header {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: bold;
+  color: var(--orange);
+  text-transform: uppercase;
+}
+
+.message-page__wrapper {
+  width: 90vw;
+  max-width: 400px;
+
+  border: 1px solid var(--pink);
+  border-radius: var(--radius);
+  background-color: var(--yellow);
+  filter: contrast(106%);
+}
+.message-page__text {
+  padding: 16px 14px;
+  color: var(--orange);
+  font-size: 1.2rem;
+  line-height: 1.39rem;
+  text-align: center;
+}
+
+.message-page__link-home {
+  margin-top: 20px;
+  padding: 10px;
+  color: var(--yellow);
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+}
+
+.message-page__link-home:hover {
+  filter: contrast(140%);
+}
+.message-page__link-home:active {
+  filter: contrast(200%);
+  transform: translateY(2px);
+}

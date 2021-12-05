@@ -1,32 +1,32 @@
-/* :root {
-  --orange: #ffaa6c;
-  --yellow: #ffe8bb;
-  --white: #ffffff;
-  --pink: #ffbecb;
-} */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* Header */
-.message-header {
-  margin-top: 40px;
+
+.home-page__header {
   margin-bottom: 20px;
+  font-size: 2.1rem;
+  line-height: 2.1rem;
+  font-weight: bold;
   color: var(--orange);
+  text-transform: uppercase;
 }
 
-/* Form block */
-.message-form {
+.home-page__form {
   display: flex;
   flex-direction: column;
 }
 
-/* Text block */
-.message-form__text {
+.home-page__form-text {
   display: flex;
   flex-direction: column;
 }
-.message-form__text > textarea {
+.home-page__form-text > textarea {
   width: 80vw;
   max-width: 400px;
-  height: 40vh;
+  height: 50vh;
   max-height: 400px;
   padding: 0 4px 0 10px;
 
@@ -38,47 +38,47 @@
   outline: none;
   resize: none;
 }
-.message-form__text > textarea:focus {
+.home-page__form-text > textarea:focus {
   filter: contrast(110%);
 }
 
-.message-form__text > p {
+.home-page__form-text > p {
   align-self: flex-end;
   color: var(--pink);
 }
 
-/* Password block */
-.message-form__password {
+.home-page__form-password {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
-.message-form__password > input {
+.home-page__form-password > input {
   align-self: center;
   width: 200px;
   height: 30px;
+  padding-top: 2px;
 
   text-align: center;
   font-size: 1.4rem;
+  line-height: 1.5rem;
   color: var(--pink);
   background-color: var(--yellow);
   border: 1px solid var(--orange);
   border-radius: var(--radius);
   outline: none;
 }
-.message-form__password > input:focus {
+.home-page__form-password > input:focus {
   filter: contrast(110%);
 }
 
-.message-form__password > p {
+.home-page__form-password > p {
   align-self: center;
   color: var(--pink);
   font-size: 0.8rem;
   text-transform: lowercase;
 }
 
-/* Button */
-.message-form__submit {
+.home-page__form-submit {
   align-self: center;
   width: 60vw;
   max-width: 120px;
@@ -96,6 +96,9 @@
   outline: none;
 }
 
-.message-form__submit:hover {
+.home-page__form-submit:hover {
   filter: contrast(140%);
+}
+.home-page__form-submit:focus {
+  filter: contrast(200%);
 }

@@ -2,9 +2,14 @@
 <html lang="en">
   <head>
     <%- include('../include/head'); %>
+
+    <link rel="stylesheet" href="css/404.css" />
   </head>
   <body>
-    <h1>404 Error!</h1>
-    <a href="/" rel="noopener noreferrer">Home</a>
+    <div class="error-page">
+      <h1 class="error-page__header">404</h1>
+      <p class="error-page__subtext">page not found</p>
+      <a class="error-page__link-home" href="/" rel="noopener noreferrer">go home</a>
+    </div>
   </body>
 </html>

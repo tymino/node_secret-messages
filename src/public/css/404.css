@@ -1,0 +1,42 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-page__header {
+  margin-bottom: 6px;
+  font-size: 6rem;
+  line-height: 6rem;
+  font-weight: bold;
+  color: var(--orange);
+}
+.error-page__subtext {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: bold;
+  color: var(--orange);
+  text-transform: uppercase;
+}
+
+.error-page__link-home {
+  margin-top: 30px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--yellow);
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+}
+
+.error-page__link-home:hover {
+  filter: contrast(140%);
+}
+.error-page__link-home:focus {
+  filter: contrast(200%);
+  transform: translateY(2px);
+}

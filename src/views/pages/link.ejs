@@ -2,8 +2,15 @@
 <html lang="en">
   <head>
     <%- include('../include/head'); %>
+
+    <link rel="stylesheet" href="css/link.css" />
+    <script defer src="js/link.js"></script>
   </head>
   <body>
-    Link
+    <div class="link-page">
+      <h1 class="link-page__header">url</h1>
+      <p class="link-page__link"><%= linkText %> </p>
+      <button class="link-page__copy">copy</button>
+    </div>
   </body>
 </html>
