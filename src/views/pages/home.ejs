@@ -7,21 +7,19 @@
     <script defer src="js/home.js"></script>
   </head>
   <body>
-    <div class="home-page">
+    <form class="home-page" method="post">
       <h1 class="home-page__header">Secret Message</h1>
-      <form class="home-page__form" method="post">
-        <div class="home-page__form-text">
-          <textarea id="textarea" name="area"></textarea>
-          <p>0/500</p>
-        </div>
+      <div class="home-page__text">
+        <textarea id="textarea" name="area"></textarea>
+        <p>0/500</p>
+      </div>
 
-        <div class="home-page__form-password">
-          <input type="text" />
-          <p>4-8 length</p>
-        </div>
+      <div class="home-page__password">
+        <input type="text" />
+        <p>4-8 length</p>
+      </div>
 
-        <button class="home-page__form-submit" type="submit">Send</button>
-      </form>
-    </div>
+      <button class="home-page__submit" type="submit">Send</button>
+    </form>
   </body>
 </html>

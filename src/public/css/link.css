@@ -34,7 +34,6 @@
   background-color: var(--orange);
   border: 1px solid var(--orange);
   border-radius: var(--radius);
-  outline: none;
 }
 
 .link-page__copy:hover {

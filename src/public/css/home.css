@@ -4,7 +4,6 @@
   align-items: center;
 }
 
-
 .home-page__header {
   margin-bottom: 20px;
   font-size: 2.1rem;
@@ -14,16 +13,12 @@
   text-transform: uppercase;
 }
 
-.home-page__form {
+.home-page__text {
   display: flex;
   flex-direction: column;
 }
 
-.home-page__form-text {
-  display: flex;
-  flex-direction: column;
-}
-.home-page__form-text > textarea {
+.home-page__text > textarea {
   width: 80vw;
   max-width: 400px;
   height: 50vh;
@@ -38,21 +33,23 @@
   outline: none;
   resize: none;
 }
-.home-page__form-text > textarea:focus {
+
+.home-page__text > textarea:focus {
   filter: contrast(110%);
 }
 
-.home-page__form-text > p {
+.home-page__text > p {
   align-self: flex-end;
   color: var(--pink);
 }
 
-.home-page__form-password {
+.home-page__password {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
-.home-page__form-password > input {
+
+.home-page__password > input {
   align-self: center;
   width: 200px;
   height: 30px;
@@ -67,18 +64,18 @@
   border-radius: var(--radius);
   outline: none;
 }
-.home-page__form-password > input:focus {
+.home-page__password > input:focus {
   filter: contrast(110%);
 }
 
-.home-page__form-password > p {
+.home-page__password > p {
   align-self: center;
   color: var(--pink);
   font-size: 0.8rem;
   text-transform: lowercase;
 }
 
-.home-page__form-submit {
+.home-page__submit {
   align-self: center;
   width: 60vw;
   max-width: 120px;
@@ -96,9 +93,9 @@
   outline: none;
 }
 
-.home-page__form-submit:hover {
+.home-page__submit:hover {
   filter: contrast(140%);
 }
-.home-page__form-submit:focus {
+.home-page__submit:focus {
   filter: contrast(200%);
 }

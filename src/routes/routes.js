@@ -11,7 +11,7 @@ router.get('/link', (req, res) => {
 router.get('/', async (req, res) => {
   await Messages.findOne({ name: 'Alex' });
   
-  res.render('pages/home');
+  res.render('pages/password');
 });
 
 router.post('/', async (req, res) => {
