@@ -13,12 +13,12 @@
   text-transform: uppercase;
 }
 
-.home-page__text {
+.home-page__message-wrapper {
   display: flex;
   flex-direction: column;
 }
 
-.home-page__text > textarea {
+.home-page__message {
   width: 80vw;
   max-width: 400px;
   height: 50vh;
@@ -34,22 +34,22 @@
   resize: none;
 }
 
-.home-page__text > textarea:focus {
+.home-page__message:focus {
   filter: contrast(110%);
 }
 
-.home-page__text > p {
+.home-page__message-limit {
   align-self: flex-end;
   color: var(--pink);
 }
 
-.home-page__password {
+.home-page__password-wrapper {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
 
-.home-page__password > input {
+.home-page__password {
   align-self: center;
   width: 200px;
   height: 30px;
@@ -64,11 +64,11 @@
   border-radius: var(--radius);
   outline: none;
 }
-.home-page__password > input:focus {
+.home-page__password:focus {
   filter: contrast(110%);
 }
 
-.home-page__password > p {
+.home-page__password-info {
   align-self: center;
   color: var(--pink);
   font-size: 0.8rem;

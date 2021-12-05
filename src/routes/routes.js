@@ -5,19 +5,21 @@ import Messages from '../db/Scheme';
 const router = express.Router();
 
 router.get('/link', (req, res) => {
-  res.render('pages/link', { linkText: 'https://localhost:5000/We4Q2u' });
+  const passedVariable = req.query.url;
+
+  console.log(req.query);
+
+  res.render('pages/link', { linkText: req.query.url });
+  // res.render('pages/link', { linkText: 'https://localhost:5000/We4Q2u44444' });
 });
 
 router.get('/', async (req, res) => {
-  await Messages.findOne({ name: 'Alex' });
-  
-  res.render('pages/password');
+  // await Messages.findOne({ name: 'Alex' });
+  res.render('pages/home');
 });
 
 router.post('/', async (req, res) => {
-  console.log(req.body.name, '/');
-
-  res.status(200).redirect('/link');
+  res.redirect('/link?url=' + req.body.name);
 });
 
 // router.get('/:id', async (req, res) => {
