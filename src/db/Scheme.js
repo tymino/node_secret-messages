@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 const messageScheme = new Schema(
   {
-    name: String,
+    url: String,
+    message: String,
+    password: String,
+    date: Date,
   },
   { versionKey: false, unique: true },
 );

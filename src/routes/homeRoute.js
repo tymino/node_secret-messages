@@ -1,6 +1,7 @@
 import path from 'path';
 import express from 'express';
 import Messages from '../db/Scheme';
+import { hash, verify } from '../utils/hash';
 
 const homeRoute = express.Router();
 
@@ -10,6 +11,19 @@ homeRoute.get('/', (req, res) => {
 });
 
 homeRoute.post('/', async (req, res) => {
+  const { message, password } = req.body;
+
+  const hashMessage = await hash(message);
+  const hashPassword = await hash(password);
+
+  const newMessage = new Messages({
+    url: 'etest',
+    message: hashMessage,
+    password: hashPassword,
+    date: new Date(),
+  });
+  console.log(newMessage);
+
   res.send(req.body);
 });
 
