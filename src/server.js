@@ -4,7 +4,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import connectDB from './db';
-import router from './routes/routes';
+import messageRoute from './routes/messageRoute';
+import homeRoute from './routes/homeRoute';
 
 const app = express();
 
@@ -19,7 +20,8 @@ app.use('/images', express.static(path.join(__dirname, 'public/images')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use('/', router);
+app.use('/message', messageRoute);
+app.use('/', homeRoute);
 
 app.use((req, res, next) => res.status(404).render('pages/404'));
 
