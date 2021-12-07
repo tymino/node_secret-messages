@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "yarn nodemon ./src/index.js"
+    "dev": "yarn nodemon ./src/index.js",
+    "build": "babel src -d build"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -20,6 +21,8 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/register": "^7.16.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "ejs": "^3.1.6",
     "ignore-styles": "^5.0.1",
     "nodemon": "^2.0.15"
