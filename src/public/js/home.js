@@ -10,6 +10,8 @@ const copy = document.querySelector('.js-link-page__copy');
 
 const MESSAGE_MAX_LENGTH = 500;
 
+const SITE_URL = 'http://localhost:5000/';
+
 const validateText = () => {
   if (message.value.length < 1) {
     message.classList.add('error');
@@ -30,10 +32,16 @@ const validatePassword = () => {
   return false;
 };
 
+const switchForm = (url) => {
+  formBlock.style.display = 'none';
+  link.textContent = `${SITE_URL}${url}`;
+  linkBlock.style.display = 'flex';
+};
+
 const clearInputs = () => {
   message.value = '';
   password.value = '';
-}
+};
 
 formBlock.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -47,7 +55,7 @@ formBlock.addEventListener('submit', async (e) => {
     password: password.value,
   };
 
-  const response = await fetch('http://localhost:5000/', {
+  const response = await fetch(SITE_URL, {
     method: 'POST',
     body: JSON.stringify(secretMessage),
     headers: {
@@ -58,6 +66,7 @@ formBlock.addEventListener('submit', async (e) => {
 
   console.log(json);
 
+  switchForm(json.url);
   clearInputs();
 });
 
@@ -77,4 +86,13 @@ password.addEventListener('input', (e) => {
     return;
   }
   validatePassword();
+});
+
+copy.addEventListener('click', (e) => {
+
+  // link.select();
+  // link.setSelectionRange(0, 999);
+
+  navigator.clipboard.writeText(link.value);
+  // link.blur();
 });

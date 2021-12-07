@@ -1,7 +1,9 @@
 import path from 'path';
 import express from 'express';
 import Messages from '../db/Scheme';
+
 import { hash, verify } from '../utils/hash';
+import urlGenerator from '../utils/urlGenerator';
 
 const homeRoute = express.Router();
 
@@ -15,16 +17,21 @@ homeRoute.post('/', async (req, res) => {
 
   const hashMessage = await hash(message);
   const hashPassword = await hash(password);
+  const newURL = urlGenerator();
 
   const newMessage = new Messages({
-    url: 'etest',
+    url: newURL,
     message: hashMessage,
     password: hashPassword,
     date: new Date(),
   });
-  console.log(newMessage);
 
-  res.send(req.body);
+  try {
+    await newMessage.save();
+    res.send({ url: newURL });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 homeRoute.get('/:id', (req, res) => {
