@@ -157,6 +157,7 @@
   font-size: 1.1rem;
   filter: contrast(110%);
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .link-page__main {
