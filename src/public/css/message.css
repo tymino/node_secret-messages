@@ -1,13 +1,13 @@
 .message-page {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
 }
 
 .message-page__header {
   margin-bottom: 20px;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
   font-weight: bold;
   color: var(--orange);
   text-transform: uppercase;
@@ -23,6 +23,7 @@
   filter: contrast(106%);
 }
 .message-page__text {
+  word-wrap: break-word;
   padding: 16px 14px;
   color: var(--orange);
   font-size: 1.2rem;
@@ -61,12 +62,28 @@
 }
 
 .password-page__header {
-  margin-bottom: 24px;
-  font-size: 2.6rem;
-  line-height: 2.6rem;
+  margin-bottom: 14px;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
   font-weight: bold;
   color: var(--orange);
   text-transform: uppercase;
+}
+
+.password-page__input:not(.error) {
+  align-self: center;
+  width: 200px;
+  height: 30px;
+  padding-top: 2px;
+
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  color: var(--pink);
+  background-color: var(--yellow);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+  outline: none;
 }
 
 .password-page__input {
@@ -80,8 +97,9 @@
   line-height: 1.5rem;
   color: var(--pink);
   background-color: var(--yellow);
-  border: 1px solid var(--orange);
+  border: 1px solid var(--red);
   border-radius: var(--radius);
+  outline: none;
 }
 
 .password-page__submit {

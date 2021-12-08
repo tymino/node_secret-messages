@@ -6,7 +6,6 @@ const submitBtn = document.querySelector('.js-home-page__submit');
 
 const linkBlock = document.querySelector('.js-link-page');
 const link = document.querySelector('.js-link-page__link');
-const copy = document.querySelector('.js-link-page__copy');
 
 const MESSAGE_MAX_LENGTH = 500;
 
@@ -35,6 +34,7 @@ const validatePassword = () => {
 const switchForm = (url) => {
   formBlock.style.display = 'none';
   link.textContent = `${SITE_URL}${url}`;
+  link.href = `${SITE_URL}${url}`;
   linkBlock.style.display = 'flex';
 };
 
@@ -86,13 +86,4 @@ password.addEventListener('input', (e) => {
     return;
   }
   validatePassword();
-});
-
-copy.addEventListener('click', (e) => {
-
-  // link.select();
-  // link.setSelectionRange(0, 999);
-
-  navigator.clipboard.writeText(link.value);
-  // link.blur();
 });

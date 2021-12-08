@@ -2,20 +2,19 @@ import path from 'path';
 import express from 'express';
 import Messages from '../db/Scheme';
 
-import { hash, verify } from '../utils/hash';
+import { hash, verify, encrypt, decrypt } from '../utils/myCrypto';
 import urlGenerator from '../utils/urlGenerator';
 
 const homeRoute = express.Router();
 
 homeRoute.get('/', (req, res) => {
-  // await Messages.findOne({ name: 'Alex' });
   res.render('pages/home');
 });
 
 homeRoute.post('/', async (req, res) => {
   const { message, password } = req.body;
 
-  const hashMessage = await hash(message);
+  const hashMessage = encrypt(message);
   const hashPassword = await hash(password);
   const newURL = urlGenerator();
 
@@ -41,29 +40,24 @@ homeRoute.get('/:id', (req, res) => {
   }
 
   res.render('pages/404');
+});
 
-  //   const name = '17';
+homeRoute.post('/:id', async (req, res) => {
+  if (req.params.id.length === 6) {
+    const data = await Messages.findOne({ url: req.params.id });
+    const checkPassword = await verify(req.body.password, data.password);
 
-  //   res.sendFile(path.join(__dirname, '../', '/pages/letter.html'));
-  //   return;
+    if (checkPassword) {
+      const message = decrypt(data.message);
+      res.send({ message });
+      return;
+    }
 
-  //   const msg = new Messages({ name });
+    res.send({ message: null });
+    return;
+  }
 
-  //   try {
-  //     const message = await Messages.findOne({ name });
-
-  //     console.log(message, '/:id');
-
-  //     if (message) {
-  //       res.send('Nope');
-  //       return;
-  //     }
-
-  //     await msg.save();
-  //     res.send('Added');
-  //   } catch (error) {
-  //     console.log(error, 'catch');
-  //   }
+  res.render('pages/404');
 });
 
 export default homeRoute;

@@ -8,7 +8,7 @@
   </head>
   <body>
     <form class="home-page js-home-page" method="post">
-      <h1 class="home-page__header">Secret Message</h1>
+      <h1 class="home-page__header">Сообщение</h1>
       <div class="home-page__message-wrapper">
         <textarea
           class="home-page__message js-home-page__message"
@@ -20,17 +20,22 @@
       </div>
       <div class="home-page__password-wrapper">
         <input class="home-page__password js-home-page__password" type="text" />
-        <p class="home-page__password-info">4-8 length</p>
+        <p class="home-page__password-info">4-8 длина</p>
       </div>
       <button class="home-page__submit js-home-page__submit" type="submit">
-        send
+        отправить
       </button>
     </form>
 
     <div class="link-page js-link-page">
       <h1 class="link-page__header">url</h1>
-      <p class="link-page__link js-link-page__link"></p>
-      <button class="link-page__copy js-link-page__copy">copy</button>
+      <a
+        class="link-page__link js-link-page__link"
+        href=""
+        target="_blank"
+        rel="noopener noreferrer"
+      ></a>
+      <a class="link-page__main" href="/">главная</a>
     </div>
   </body>
 </html>
