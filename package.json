@@ -2,7 +2,7 @@
   "name": "node_secret-messages",
   "version": "0.0.1",
   "main": "index.js",
-  "repository": "qwe",
+  "repository": "https://github.com/tymino/node_secret-messages",
   "author": "tymino",
   "license": "MIT",
   "private": false,
